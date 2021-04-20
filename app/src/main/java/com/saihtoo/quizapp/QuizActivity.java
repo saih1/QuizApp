@@ -45,7 +45,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         getCorrectBtn(questionNum).setBackgroundColor(getResources().getColor(R.color.green));
     }
 
-    //Method to display the Correct button
+    //Method to get the Correct button in relation to the answer retrieved from the Question class
     public Button getCorrectBtn(int questionNum) {
         if (option1.getText().toString().equals(getAnswer(questionNum)))
             return option1;
