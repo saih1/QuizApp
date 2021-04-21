@@ -58,15 +58,13 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     //Method to reset all button colors
     public void resetButton() {
         option1.setBackgroundColor(getResources().getColor(R.color.purple_500));
-        option3.setBackgroundColor(getResources().getColor(R.color.purple_500));
         option2.setBackgroundColor(getResources().getColor(R.color.purple_500));
+        option3.setBackgroundColor(getResources().getColor(R.color.purple_500));
     }
 
     //Method to display the selected button
     public void selectButton(Button optionNum) {
-        option1.setBackgroundColor(getResources().getColor(R.color.purple_500));
-        option3.setBackgroundColor(getResources().getColor(R.color.purple_500));
-        option2.setBackgroundColor(getResources().getColor(R.color.purple_500));
+        resetButton();
         optionNum.setBackgroundColor(getResources().getColor(R.color.purple_700));
     }
 
@@ -119,9 +117,8 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.submitBtn:
                 if (submitClick == 1) {
                     displayCorrectAns(questionCount);
-                    if (selectedOption.equals(getAnswer(questionCount))) {
+                    if (selectedOption.equals(getAnswer(questionCount)))
                         correctCount++;
-                    }
                     questionCount++;
                     progress.setProgress(questionCount - 1);
                     submitBtn.setText("Next");
@@ -130,9 +127,8 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
                 else if (submitClick == 2) {
                     resetButton();
                     submitBtn.setText("Submit");
-                    if (questionCount <= MAX_QUESTION_NUM) {
+                    if (questionCount <= MAX_QUESTION_NUM)
                         getQuestionSet(questionCount);
-                    }
                     else {
                         Intent intent = new Intent(getBaseContext(), ResultActivity.class);
                         intent.putExtra("Score", correctCount);
@@ -141,8 +137,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
                         startActivity(intent);
                     }
                     submitClick = 1;
-                }
-                break;
+                } break;
         }
     }
 }

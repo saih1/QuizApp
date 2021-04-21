@@ -1,33 +1,28 @@
 package com.saihtoo.quizapp;
 
 //Question class where all the questions are stored
-public class Question {
-    private final String[] questions =
-            {
+public class Question
+{
+    private final String[] questions = {
                     "How to get a response from an activity in Android?",
                     "Which component is NOT part of Android architecture?",
                     "Which company developed android??",
                     "Android is ...",
-                    "Android OS is based on ..."
-            };
+                    "Android OS is based on ..."};
 
-    private final String[][] options =
-            {
+    private final String[][] options = {
                     {"startActivityToResult()", "startActivityForResult()", "startActivityFromResult()"},
                     {"Android Document", "Libraries", "Android Framework"},
                     {"Apple", "Nokia", "Android Inc"},
                     {"Web server", "Web browser", "Operation system"},
-                    {"Windows", "Linux", "Solaris"}
-            };
+                    {"Windows", "Linux", "Solaris"}};
 
-    private final String[] correctAns =
-            {
+    private final String[] correctAns = {
                     "startActivityForResult()",
                     "Android Document",
                     "Android Inc",
                     "Operation system",
-                    "Linux"
-            };
+                    "Linux"};
 
     //Getter methods
     public String getQuestion(int questionNum) {
